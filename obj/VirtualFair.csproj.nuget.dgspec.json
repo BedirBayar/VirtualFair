@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\.NET Core projects\\VirtualFair\\VirtualFair.csproj": {}
+    "D:\\.NET Core projects\\Github\\VirtualFair\\VirtualFair.csproj": {}
   },
   "projects": {
-    "D:\\.NET Core projects\\VirtualFair\\VirtualFair.csproj": {
+    "D:\\.NET Core projects\\Github\\VirtualFair\\VirtualFair.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.NET Core projects\\VirtualFair\\VirtualFair.csproj",
+        "projectUniqueName": "D:\\.NET Core projects\\Github\\VirtualFair\\VirtualFair.csproj",
         "projectName": "VirtualFair",
-        "projectPath": "D:\\.NET Core projects\\VirtualFair\\VirtualFair.csproj",
+        "projectPath": "D:\\.NET Core projects\\Github\\VirtualFair\\VirtualFair.csproj",
         "packagesPath": "C:\\Users\\bedir\\.nuget\\packages\\",
-        "outputPath": "D:\\.NET Core projects\\VirtualFair\\obj\\",
+        "outputPath": "D:\\.NET Core projects\\Github\\VirtualFair\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -41,6 +41,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNet.Identity.Core": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.7, )"
@@ -60,6 +64,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[3.1.7, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[3.1.8, )"
             }
           },
           "imports": [

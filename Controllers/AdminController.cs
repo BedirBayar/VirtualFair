@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -10,6 +11,7 @@ using VirtualFair.Models.RegisterModels;
 
 namespace VirtualFair.Controllers
 {
+   [Authorize]
     public class AdminController : Controller
     {
         private UserManager<User> _userManager;
@@ -18,6 +20,8 @@ namespace VirtualFair.Controllers
         {
             _userManager = userManager;
         }
+
+        
         public IActionResult Index()
         {
             return View(_userManager.Users);
@@ -26,6 +30,8 @@ namespace VirtualFair.Controllers
         {
             return View();
         }
+
+       
         [HttpPost]
         public async Task<IActionResult> Create(RegisterUser user)
         {

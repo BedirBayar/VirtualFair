@@ -9,7 +9,7 @@ namespace VirtualFair.Models
 {
     public class User:IdentityUser
     {
-    
+    public string Password { get; set; }
         
 
     }
