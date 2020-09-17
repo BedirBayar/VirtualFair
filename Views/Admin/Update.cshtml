@@ -1,0 +1,32 @@
+﻿@model User
+
+<h2>Kullanıcı Bilgilerini Düzenle</h2>
+
+
+
+<form class="m-1 p-1" method="post" asp-action="Update">
+
+    <div class="text-danger" asp-validation-summary="All"></div>
+
+    <div class="form-group">
+        <label asp-for="UserName">Adı</label>
+        <input asp-for="UserName" class="form-control" />
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Password">Parola</label>
+        <input asp-for="Password" type="password" class="form-control" />
+    </div>
+
+    <div class="text-danger" asp-validation-summary="All"></div>
+
+    <input type="submit" value="Güncelle" class="btn btn-primary" />
+
+</form>

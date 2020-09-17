@@ -39,6 +39,7 @@ namespace VirtualFair
                 options.Password.RequireUppercase = false;
                 options.Password.RequireNonAlphanumeric = false;
                 options.User.RequireUniqueEmail = true;
+                options.User.AllowedUserNameCharacters = "abcçdefgðhýijklmnoöprsþtuüvyzABCÇDEFGÐHIÝJKLMNOÖPRSÞTUÜVYZ1234567890";
                 })
            
                 .AddEntityFrameworkStores<ApplicationIdentityDbContext>()

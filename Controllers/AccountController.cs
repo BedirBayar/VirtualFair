@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-//using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using VirtualFair.Models;
@@ -50,6 +49,45 @@ namespace VirtualFair.Controllers
             }
             
             return View(model);
+        }
+
+        public async Task<ActionResult> Logout()
+        {
+            var user = _signinmanager.GetExternalLoginInfoAsync();
+            await _signinmanager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+           
+        }
+       
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterUser user)
+        {
+            if (ModelState.IsValid)
+            {
+                User newUser = new User();
+                newUser.UserName = user.Name;
+                newUser.Email = user.Email;
+
+
+                var result = await _usermanager.CreateAsync(newUser, user.Password);
+                if (result.Succeeded) {
+                    await _signinmanager.SignOutAsync();
+                    var result2 = await _signinmanager.PasswordSignInAsync(user.Name, user.Password, false, false);
+                    if (result2.Succeeded)
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    foreach (var item in result.Errors) ModelState.AddModelError("", item.Description);
+                }
+            }
+            return View(user);
         }
     }
 }

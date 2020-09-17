@@ -168,3 +168,8 @@ D:\.NET Core projects\Github\VirtualFair\obj\Debug\netcoreapp3.1\Razor\Views\Acc
 D:\.NET Core projects\Github\VirtualFair\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.Core.dll
 D:\.NET Core projects\Github\VirtualFair\obj\Debug\netcoreapp3.1\VirtualFair.csproj.CoreCompileInputs.cache
 D:\.NET Core projects\Github\VirtualFair\obj\Debug\netcoreapp3.1\VirtualFair.MvcApplicationPartsAssemblyInfo.cache
+D:\.NET Core projects\Github\VirtualFair\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Update.cshtml.g.cs
+D:\.NET Core projects\Github\VirtualFair\obj\Debug\netcoreapp3.1\Razor\Views\AdminRole\Create.cshtml.g.cs
+D:\.NET Core projects\Github\VirtualFair\obj\Debug\netcoreapp3.1\Razor\Views\AdminRole\Index.cshtml.g.cs
+D:\.NET Core projects\Github\VirtualFair\obj\Debug\netcoreapp3.1\Razor\Views\AdminRole\Edit.cshtml.g.cs
+D:\.NET Core projects\Github\VirtualFair\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs

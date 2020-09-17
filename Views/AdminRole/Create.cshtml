@@ -1,0 +1,19 @@
+﻿@model string  
+
+<h2>Kullanıcı Oluştur</h2> 
+
+<form class="m-1 p-1" method="post" asp-action="Create">
+
+    <div class="form-group">
+        <label form="Name">Adı</label>
+        <input name="Name" class="form-control" />
+    </div>
+
+
+    
+
+    <div class="text-danger" asp-validation-summary="All"></div>
+
+    <input type="submit" value="Oluştur" class="btn btn-primary" />
+
+</form>

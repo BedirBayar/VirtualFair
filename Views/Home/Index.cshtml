@@ -1,8 +1,27 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<style>
+    .img-holder {
+        width: 100%;
+        height: 500px;
+        display:inline-block;
+       background-image: url('~/Images/anasayfa.jpeg');
+    }
+</style>
+<div class="img-holder">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <span>@User.Identity.Name</span>
+        <a asp-action="Logout" asp-controller="Account" class="btn btn-dark">Oturumu Kapat</a>
+    }
+    else
+    {
+        <a asp-action="Login" asp-controller="Account" class="btn btn-primary">Giriş Yap</a>
+        <a asp-action="Register" asp-controller="Account" class="btn btn-secondary">Kayıt Ol</a>
+    }
+
+
+    <div class="text-center" style="margin-top:100px">
+        <h2 class="display-4">Sanal Fuar Merkezi'ne Hoşgeldiniz</h2>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>
 </div>

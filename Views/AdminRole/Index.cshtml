@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
+
+
+@if (User.Identity.IsAuthenticated)
+{
+    <span>@User.Identity.Name</span>
+    <a asp-action="Logout" asp-controller="Account" class="btn btn-dark">Oturumu Kapat</a>
+}
+
+<table class="table table-primary table-bordered ">
+    <thead>
+        <tr>
+
+            <th>Adı</th>
+            <th>Kullanıcılar</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr><td colspan="3" class="text-center">Rol Yok!</td> </tr>
+
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>@item.Name</td>
+
+                    <td identity-role="@item.Id"></td>
+                    <td>
+                        <form asp-route-id=@item.Id asp-action="Delete" method="post">
+                            <button type="submit" value="Sil" class="btn btn-danger"> Sil</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form asp-route-id=@item.Id asp-action="Edit" method="get">
+                            <button type="submit" value="Düzenle" class="btn btn-warning"> Düzenle</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+
+</table>
+
+<a asp-action="Create" asp-controller="AdminRole" class="btn btn-primary">Rol Oluştur</a>
